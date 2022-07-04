@@ -16,5 +16,8 @@
     "jsontoxml": "^1.0.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
   }
 }

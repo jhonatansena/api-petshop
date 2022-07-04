@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  petshop-db:
+    container_name: petshop-db
+    image: mariadb
+    restart: always 
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    environment:
+      - MYSQL_DATABASE=petshop
+      - MYSQL_USER=petshop
+      - MYSQL_ROOT_PASSWORD=petshop
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db:
+    driver: local
